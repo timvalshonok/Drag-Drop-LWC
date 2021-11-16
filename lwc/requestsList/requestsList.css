@@ -1,0 +1,10 @@
+.custom-box {
+    text-align: center;
+    background-color: #f4f6f9;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+}
+.drag {
+    border-style: solid dotted;
+    opacity: 0.50;
+}

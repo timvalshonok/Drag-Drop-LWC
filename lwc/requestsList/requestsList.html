@@ -1,0 +1,148 @@
+<template>
+    <lightning-layout vertical-align="stretch" multiple-rows="true" class="x-large">
+        <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box">
+            <div class="slds-text-heading_large">New</div>
+            <div id="new" style="height:100%" ondrop={handleDrop} ondragover={handleDragOver}>
+                <template if:true={requestsNewList}>
+                    <template for:each={requestsNewList} for:item="request">
+                        <div key={request.Name} draggable="true" id={request.Name} data-id={request.Name} ondragstart={dragStart} ondragend={dragEnd} class="slds-p-around_small">
+                            <lightning-card style="width: 50px;"  variant="Narrow" title={request.Description} icon-name="custom:custom18">
+                                <div class="slds-p-horizontal_small">
+                                    <template if:true={request.Name}>
+                                        <span>{request.Name}</span><br/>
+                                    </template>
+                                    <template if:true={request.Contact}>
+                                        <span>Contact Name: {request.Contact}</span><br/>
+                                    </template>
+                                    <template if:true={request.AccountName}>
+                                        <span>Account Name: {request.Account}</span><br/>
+                                    </template>
+                                    <template if:true={request.Phone}>
+                                        <span>Phone: {request.Phone}</span><br/>
+                                    </template>
+                                    <template if:true={request.Priority}>
+                                        <span>Priority: {request.Priority}</span><br/>
+                                    </template>
+                                    <template if:true={request.Status}>
+                                        <span>Status: {request.Status}</span><br/>
+                                    </template>
+                                    <template if:true={request.Expiration_Date}>
+                                        <span>Expiration Date: {request.Expiration_Date}</span><br/>
+                                    </template>
+                                </div>
+                            </lightning-card>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box">
+            <div class="slds-text-heading_large">In Progress</div>
+            <div id="inProgress" style="height:100%" ondrop={handleDrop} ondragover={handleDragOver}>
+                <template if:true={requestsInProgressList}>
+                    <template for:each={requestsInProgressList} for:item="request">
+                        <div key={request.Name} draggable="true" id={request.Name} data-id={request.Name} ondragstart={dragStart} ondragend={dragEnd} class="slds-p-around_small">
+                            <lightning-card style="width: 50px;"  variant="Narrow" title={request.Description} icon-name="custom:custom15">
+                                <div class="slds-p-horizontal_small">
+                                    <template if:true={request.Name}>
+                                        <span>{request.Name}</span><br/>
+                                    </template>
+                                    <template if:true={request.Contact}>
+                                        <span>Contact Name: {request.Contact}</span><br/>
+                                    </template>
+                                    <template if:true={request.AccountName}>
+                                        <span>Account Name: {request.Account}</span><br/>
+                                    </template>
+                                    <template if:true={request.Phone}>
+                                        <span>Phone: {request.Phone}</span><br/>
+                                    </template>
+                                    <template if:true={request.Priority}>
+                                        <span>Priority: {request.Priority}</span><br/>
+                                    </template>
+                                    <template if:true={request.Status}>
+                                        <span>Status: {request.Status}</span><br/>
+                                    </template>
+                                    <template if:true={request.Expiration_Date}>
+                                        <span>Expiration Date: {request.Expiration_Date}</span><br/>
+                                    </template>
+                                </div>
+                            </lightning-card>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box">
+            <div class="slds-text-heading_large">Waiting</div>
+            <div id="waiting" style="height:100%" ondrop={handleDrop} ondragover={handleDragOver}>
+                <template if:true={requestsWaitingList}>
+                    <template for:each={requestsWaitingList} for:item="request">
+                        <div key={request.Name} draggable="true" id={request.Name} data-id={request.Name} ondragstart={dragStart} ondragend={dragEnd} class="slds-p-around_small">
+                            <lightning-card style="width: 50px;"  variant="Narrow" title={request.Description} icon-name="standard:resource_preference">
+                                <div class="slds-p-horizontal_small">
+                                    <template if:true={request.Name}>
+                                        <span>{request.Name}</span><br/>
+                                    </template>
+                                    <template if:true={request.Contact}>
+                                        <span>Contact Name: {request.Contact}</span><br/>
+                                    </template>
+                                    <template if:true={request.AccountName}>
+                                        <span>Account Name: {request.Account}</span><br/>
+                                    </template>
+                                    <template if:true={request.Phone}>
+                                        <span>Phone: {request.Phone}</span><br/>
+                                    </template>
+                                    <template if:true={request.Priority}>
+                                        <span>Priority: {request.Priority}</span><br/>
+                                    </template>
+                                    <template if:true={request.Status}>
+                                        <span>Status: {request.Status}</span><br/>
+                                    </template>
+                                    <template if:true={request.Expiration_Date}>
+                                        <span>Expiration Date: {request.Expiration_Date}</span><br/>
+                                    </template>
+                                </div>
+                            </lightning-card>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto" padding="around-small" class="custom-box">
+            <div class="slds-text-heading_large">Closed</div>
+            <div id="closed" style="height:100%" ondrop={handleDrop} ondragover={handleDragOver}>
+                <template if:true={requestsClosedList}>
+                    <template for:each={requestsClosedList} for:item="request">
+                        <div key={request.Name} draggable="true" id={request.Name} data-id={request.Name} ondragstart={dragStart} ondragend={dragEnd} class="slds-p-around_small">
+                            <lightning-card style="width: 50px;"  variant="Narrow" title={request.Description} icon-name="action:approval">
+                                <div class="slds-p-horizontal_small">
+                                    <template if:true={request.Name}>
+                                        <span>{request.Name}</span><br/>
+                                    </template>
+                                    <template if:true={request.Contact}>
+                                        <span>Contact Name: {request.Contact}</span><br/>
+                                    </template>
+                                    <template if:true={request.AccountName}>
+                                        <span>Account Name: {request.Account}</span><br/>
+                                    </template>
+                                    <template if:true={request.Phone}>
+                                        <span>Phone: {request.Phone}</span><br/>
+                                    </template>
+                                    <template if:true={request.Priority}>
+                                        <span>Priority: {request.Priority}</span><br/>
+                                    </template>
+                                    <template if:true={request.Status}>
+                                        <span>Status: {request.Status}</span><br/>
+                                    </template>
+                                    <template if:true={request.Expiration_Date}>
+                                        <span>Expiration Date: {request.Expiration_Date}</span><br/>
+                                    </template>
+                                </div>
+                            </lightning-card>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
