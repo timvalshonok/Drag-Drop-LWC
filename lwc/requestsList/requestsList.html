@@ -114,7 +114,7 @@
                 <template if:true={requestsClosedList}>
                     <template for:each={requestsClosedList} for:item="request">
                         <div key={request.Name} draggable="true" id={request.Name} data-id={request.Name} ondragstart={dragStart} ondragend={dragEnd} class="slds-p-around_small">
-                            <lightning-card style="width: 50px;"  variant="Narrow" title={request.Description} icon-name="action:approval">
+                            <lightning-card style="width: 50px;"  variant="Narrow" title={request.Description} icon-name="custom:custom20">
                                 <div class="slds-p-horizontal_small">
                                     <template if:true={request.Name}>
                                         <span>{request.Name}</span><br/>
