@@ -62,7 +62,7 @@ export default class RequestsList extends LightningElement {
 
     handleDrop(event){
         this.cancel(event);
-        const columnUsed = event.target.id;
+        const columnUsed = event.currentTarget.id;
         let requestNewStatus;
         if (columnUsed.includes('new')){
             requestNewStatus = 'New';
