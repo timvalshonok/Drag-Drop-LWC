@@ -3,6 +3,7 @@ import getAllRequests from '@salesforce/apex/RequestsController.getAllRequests';
 import updateRequest from '@salesforce/apex/RequestsController.updateRequest';
 
 export default class RequestsList extends LightningElement {
+    
     requestsNewList = [];
     requestsInProgressList = [];
     requestsWaitingList = [];
@@ -56,11 +57,11 @@ export default class RequestsList extends LightningElement {
         draggableElement.classList.add('drag');
     }
 
-    handleDragOver(event){
+    handleDragOver(event) {
         this.cancel(event);
     }
 
-    handleDrop(event){
+    handleDrop(event) {
         this.cancel(event);
         const columnUsed = event.currentTarget.id;
         let requestNewStatus;
