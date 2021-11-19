@@ -1,8 +1,9 @@
 public with sharing class RequestsController {
+    
     @AuraEnabled
     public static List<Request__c> getAllRequests() {
         return [SELECT Name__c, Account__c, Contact__c, Phone__c, 
-        Priority__c, Status__c, Expiration_Date__c, Description__c
+            Priority__c, Status__c, Expiration_Date__c, Description__c
         FROM Request__c
         ORDER BY Priority__c
         LIMIT 100];
