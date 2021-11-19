@@ -67,11 +67,11 @@ export default class RequestsList extends LightningElement {
         let requestNewStatus;
         if (columnUsed.includes('new')){
             requestNewStatus = 'New';
-        } else if (columnUsed.includes('inProgress')){
+        } else if (columnUsed.includes('inProgress')) {
             requestNewStatus = 'In progress';
-        } else if (columnUsed.includes('waiting')){
+        } else if (columnUsed.includes('waiting')) {
             requestNewStatus = 'Waiting';
-        } else if (columnUsed.includes('closed')){
+        } else if (columnUsed.includes('closed')) {
             requestNewStatus = 'Closed';
         }
         this.updateRequestStatus(this.dropRequestId, requestNewStatus);
