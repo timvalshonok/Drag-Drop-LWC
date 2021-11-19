@@ -1,5 +1,6 @@
 @isTest
 public class RequestsControllerTest {
+    
     @TestSetup static void setup() {
         List<Request__c> requests = new List<Request__c>();
         Request__c request = new Request__c(Contact__c='Test Contact', Status__c='New');
